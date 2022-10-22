@@ -1,4 +1,4 @@
-This repository is to track my JS learnings :)
-~ Resources ~ 
-Website : https://javascript.info/
-Udemy : https://www.udemy.com/course/the-complete-javascript-course/
+This repository is to track my JS learnings :) __
+~ Resources ~ __
+Website : https://javascript.info/ __
+Udemy : https://www.udemy.com/course/the-complete-javascript-course/ __
