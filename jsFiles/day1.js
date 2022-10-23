@@ -1,4 +1,8 @@
-"use strict"; //Enables the code to work in modern way
+"use strict";
+
+//* PRIMITIVES
+
+//Enables the code to work in modern way
 // Must be enabled if it is only at top
 
 // alert("I'm JavaScript");
@@ -19,7 +23,7 @@
   comment
 */
 
-// VARIABLES
+//* VARIABLES
 
 let newMsg = "Hello , I'm a msg";
 newMsg = "I'm a modified msg";
@@ -62,16 +66,61 @@ console.log(
 let admin, $name;
 $name = "John";
 admin = $name;
-alert(admin);
+// alert(admin);
 
 let planetName, currentUser;
 planetName = "Earth";
 currentUser = admin;
 
 const BIRTHDATE = "13.07.2003";
-const myAge = SomeCode(BIRTHDATE);
+// const myAge = SomeCode(BIRTHDATE);
 
-// both are const but birthdate is fixed one cant changed 
+// both are const but birthdate is fixed one cant changed
 // but age changes with runtime of somecode func
 // so uppercase const applied only for birthdate not age
+
+//* DATATYPES
+/*
+ *JS is Dynamically Typed
+ */
+
+let stringDT_Eg = "Akash";
+let numberDT_Eg = 12;
+numberDT_Eg = 12.54; //Either float or int
+
+// ? Other also include infinity , - infinity , NaN
+
+// alert(1 / 0);
+// alert(stringDT_Eg / 2);
+
+// Operations invlove NaN results in NaN
+
+// alert(`Hello ${admin}`);
+
+let userNameProvided = true;
+let passwordProvided = false;
+
+let isGreater = 1 > 4;
+console.log("isGreater", isGreater);
+
+let voidGuy = null;
+console.log("voidGuy", voidGuy);
+
+let noDefGuy;
+console.log("noDefGuy", noDefGuy);
+
+noDefGuy = 12;
+console.log("noDefGuy", noDefGuy);
+
+console.log(typeof undefined);
+console.log(typeof NaN);
+console.log(typeof null);
+// null is not a object it is a spl value type
+// ? typeof is wrong here
+console.log(typeof "Akash");
+console.log(typeof 12);
+console.log(typeof 23647862476387264n);
+console.log(typeof true);
+console.log(typeof Math);
+console.log(typeof alert);
 
