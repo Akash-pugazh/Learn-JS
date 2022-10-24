@@ -50,3 +50,34 @@ console.log(Boolean("Hello"));
 console.log(Boolean("0"));
 console.log(Boolean(" ")); //Spaces are true
 
+// * BASIC MATHS OPERATIONS
+
+// unary, binary
+
+let num1 = 1;
+num1 = -num1; //Operator here is unary involve one operand
+console.log(num1); 
+
+let $n1 = 4, $n2 = 2;
+console.log($n1 - $n2); //Operator here is binary involve two operand
+
+let $num1 = 10, $num2 = 5;
+const $rem = $num1 % $num2;
+console.log("$rem", $rem);
+
+const $pow = $num1 ** $num2;
+console.log("$pow", $pow);
+
+const $sqrt = $num1 ** (1/2);
+console.log("$sqrt", $sqrt);
+
+// String conc
+
+let sConc = "My" + "name";
+console.log("sConc", sConc);
+
+let a = prompt("First number?", 1);
+let b = prompt("Second number?", 2);
+
+console.log(Number(a)+ Number(b));
+
