@@ -111,13 +111,14 @@ inputAge >= 22
 // ? unusual way
 
 // Task
-let getInputAnswer = prompt("What is the official name of Javascript");
+// let getInputAnswer = prompt("What is the official name of Javascript");
+let getInputAnswer = "ecmascript";
 
 let res = getInputAnswer == "ecmascript";
 
 res ? console.log("Right🤜") : console.log("You don't know ECMAScript😭");
 
-let getInputNumber = prompt("Enter number");
+let getInputNumber = 34;
 getInputNumber = Number(getInputNumber);
 
 if (getInputNumber > 0) {
@@ -127,3 +128,73 @@ if (getInputNumber > 0) {
 } else {
   console.log("➖");
 }
+
+// * LOGICAL OPERATORS
+
+// Four(||, &&, !, ??)
+
+// OR  // ? high precedence rank 3
+
+console.log(true || true);
+console.log(true || false);
+console.log(false || true);
+console.log(false || false);
+
+console.log(0 || 0);
+console.log(0 || 1);
+console.log(1 || 23);
+//returns first true val and last false val
+
+let time = 12;
+let isWeekEnd = true;
+if (time < 10 || time > 22 || isWeekEnd) {
+  console.log("Closed🚫");
+} else {
+  console.log("Shops open🏪");
+}
+
+let firstName, lastName, nickName;
+// let nickName = "SuperCoder";
+
+console.log(firstName || lastName || nickName || "Anonymous");
+
+// Short circuiting
+
+console.log(null || "If cond is true this is not displayed");
+console.log(true || "If cond is true this is not displayed");
+
+// AND  // ? high precedence rank 2
+
+console.log(true && true);
+console.log(true && false);
+console.log(false && true);
+console.log(false && false);
+
+console.log(0 && 3);
+console.log(1 && 0);
+console.log(1 && 4);
+//returns last true val and 1st false val
+
+// NOT // ? high precedence rank 1
+
+console.log(!true);
+console.log(!false);
+
+let loginId = prompt("Who's there ? ");
+let password;
+if (loginId === "Admin") {
+  password = prompt("Enter admin password : ");
+  password === "TheMaster"
+    ? console.log("Welcome🥰")
+    : !password || password == ""
+    ? console.log("Cancelled")
+    : console.log("WrongPassword");
+} else if (loginId === "Cancel" || !loginId) {
+  console.log("Cancelled 🚫");
+} else {
+  console.log("I don't know you 🙅‍♀️");
+}
+
+// End of DAY3
+
+// :)
