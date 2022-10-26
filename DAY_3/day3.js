@@ -59,23 +59,71 @@ null === +"\n0\n" //f
 
 */
 
+// * CONDITIONAL BRANCHING
 
+/*
 
+let isAdmin = prompt("Are you admin ? (y/n)");
 
+if (isAdmin == "y") alert("WELCOME BOSS"); // ?  simple exec
 
+if (isAdmin == "y") {
+  alert("WELCOME BOSS");
+  alert("MORNING🌞");
+} // ? complex exec
 
+*/
 
+// let userAge = prompt("Enter your age");
+let userAge = 18;
+if (userAge > 18) {
+  console.log("You are bit old for party");
+} else if (userAge < 18) {
+  console.log("You are bit younger for party");
+} else {
+  console.log("You are perfect for partys👌");
+}
 
+// ? Qn mark operator or TERNARY
+// * let variableName = cond ? Truthyval : Falsedval
 
+userAge = 23;
+userAge = 3;
+let access = userAge >= 18 ? true : false;
+console.log(access);
 
+let inputAge = 5;
+let ageGreeter =
+  inputAge < 5
+    ? "Hi baby"
+    : inputAge < 18
+    ? "Hello boy / girl"
+    : inputAge < 80
+    ? "Hello Uncle / aunt"
+    : "Unusual Age Entered😟";
+console.log(ageGreeter);
 
+//NON TRADITIONAL WAY OF IF AMD ?
 
+inputAge >= 22
+  ? console.log("Allowed for marriage")
+  : console.log("Child marriages are not allowed");
+// ? unusual way
 
+// Task
+let getInputAnswer = prompt("What is the official name of Javascript");
 
+let res = getInputAnswer == "ecmascript";
 
+res ? console.log("Right🤜") : console.log("You don't know ECMAScript😭");
 
+let getInputNumber = prompt("Enter number");
+getInputNumber = Number(getInputNumber);
 
-
-
-
-
+if (getInputNumber > 0) {
+  console.log("➕");
+} else if (getInputNumber === 0) {
+  console.log("0️⃣");
+} else {
+  console.log("➖");
+}
