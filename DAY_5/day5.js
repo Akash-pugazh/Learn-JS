@@ -234,17 +234,48 @@ function noMsg() {
   console.log("Nope");
 }
 
-ask("Do you taken food", yesMsg, noMsg);
+// ask("Do you taken food", yesMsg, noMsg);
 
 // Anonymous funcs
 
-ask(
-  "Did you sleep",
-  function () {
-    console.log("Yeah i slept");
-  },
-  function () {
-    console.log("No ive not slept");
-  } //funcs are not accessible outside ask as they are called anonymous functions
-);
+// ask(
+//   "Did you sleep",
+//   function () {
+//     console.log("Yeah i slept");
+//   },
+//   function () {
+//     console.log("No ive not slept");
+//   } //funcs are not accessible outside ask as they are called anonymous functions
+// );
 
+// ! Arrow Functions
+
+let sumFunc = (a, b) => a + b;
+
+let test1 = sumFunc(2, 3);
+console.log("test1", test1);
+
+// if no args paranthesis will empty but it should be present
+
+let greetMsg = () => "Morning"; //defaultly returns anything when without curly braces
+console.log("Good " + greetMsg());
+
+let multiLineFunc = () => {
+  let time = "Morning";
+  return time;
+};
+console.log("Good " + multiLineFunc());
+
+// Good to be used for one liners and callbacks
+
+// tasks
+
+ask = (question, yes, no) => {
+  confirm(question) ? yes() : no();
+};
+
+ask(
+  "Do you agree?",
+  () => alert("You agreed."),
+  () => alert("You canceled the execution.")
+);
