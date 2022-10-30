@@ -178,32 +178,73 @@ return (
 // Tasks
 
 function checkAge1(age) {
-  return (age > 18) ? true : confirm("Did parents allow you ?");
+  return age > 18 ? true : confirm("Did parents allow you ?");
 }
 
 function checkAge2(age) {
-  return (age > 18) || confirm("Did parents allow you ?");
+  return age > 18 || confirm("Did parents allow you ?");
 }
 
-function min(a, b){
-  return a>b ? b : a;
+function min(a, b) {
+  return a > b ? b : a;
 }
 
-let res1 = min(1,2)
+let res1 = min(1, 2);
 console.log("res1", res1);
-let res2 = min(2,5);
+let res2 = min(2, 5);
 console.log("res2", res2);
 let res3 = min(3, -1);
 console.log("res3", res3);
-let res4 = min(1,1);
+let res4 = min(1, 1);
 console.log("res4", res4);
 
-function pow(x,y){
+function pow(x, y) {
   return x ** y;
 }
-let res5 = pow(3,2);
+let res5 = pow(3, 2);
 console.log("res5", res5);
-let res6 = pow(3,3); 
+let res6 = pow(3, 3);
 console.log("res6", res6);
-let res7 = pow(1, 100); 
+let res7 = pow(1, 100);
 console.log("res7", res7);
+
+// Function expressions
+
+let sayHi = function () {
+  console.log("Hi");
+};
+sayHi();
+
+function sayHi1() {
+  console.log("hi");
+}
+let copyHi = sayHi;
+copyHi();
+sayHi();
+
+// ! CALLBACK FUNCTIONS
+
+function ask(question, yes, no) {
+  confirm(question) ? yes() : no();
+}
+function yesMsg() {
+  console.log("Yeah");
+}
+function noMsg() {
+  console.log("Nope");
+}
+
+ask("Do you taken food", yesMsg, noMsg);
+
+// Anonymous funcs
+
+ask(
+  "Did you sleep",
+  function () {
+    console.log("Yeah i slept");
+  },
+  function () {
+    console.log("No ive not slept");
+  } //funcs are not accessible outside ask as they are called anonymous functions
+);
+
