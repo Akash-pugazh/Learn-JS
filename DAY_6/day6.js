@@ -183,7 +183,7 @@ console.log(sum);
 
 function multiplyNumeric(objName) {
   for (let prop in objName) {
-    if (typeof objName[prop] === 'number')  {
+    if (typeof objName[prop] === "number") {
       objName[prop] *= 2;
     }
   }
@@ -199,3 +199,126 @@ multiplyNumeric(menu);
 console.log(menu);
 
 // Objects Deep Dive
+
+console.log("");
+console.log("");
+
+let msg = "hi";
+let phrase = msg;
+console.log("msg", msg);
+console.log("phrase", phrase);
+phrase = "hello";
+console.log("msg", msg); //not changed as it is a entire seperate copy
+console.log("phrase", phrase);
+
+// ? Objects instead store them as a reference
+
+let testingObj = {
+  myName: "Akash",
+};
+let testingObjCopy = testingObj;
+console.log("testingObj", testingObj);
+console.log("testingObjCopy", testingObjCopy);
+// here they appear as same but when we change any one of this it will affect another as we are changing the referenced value
+
+// ! here we are not creating copies only references are used
+
+testingObjCopy.myName = "Virus";
+console.log("testingObj", testingObj); // changes the referenced value
+console.log("testingObjCopy", testingObjCopy);
+
+// ! COMPARISONS
+
+let a = {};
+let b = a;
+console.log(a == b);
+console.log(a === b);
+
+a = {};
+b = {}; // ? independent objects
+console.log(a == b);
+console.log(a === b);
+
+// ! Const objs can be modified
+
+const userConstObj = {
+  myName: "Virus",
+};
+userConstObj.myName = "Ak";
+console.log(userConstObj.myName);
+
+// * Cloning and merging, Object.assign
+
+let userObj3 = {
+  myName: "Virus",
+  isFine: true,
+};
+
+let clone = {};
+for (let props in userObj3) {
+  clone[props] = userObj3[props];
+}
+
+clone.myName = "Akash";
+console.log(userObj3);
+console.log(clone);
+
+// ! best for copying is Object.assign method
+// ? Object.assign(objName ,  sources...)
+
+let clone1 = {};
+Object.assign(clone1, userObj3);
+console.log("clone1", clone1);
+
+//If the copied property name already exists, it gets overwritten
+
+// short way for clone
+
+let clone2 = Object.assign({}, userObj3);
+console.log("clone2", clone2);
+
+// * Nested cloning
+
+let userObj4 = {
+  myName: "cat",
+  activities: {
+    canMeow: true,
+    canBark: false,
+  },
+};
+console.log(userObj4.activities.canMeow);
+
+let userObj4Clone = Object.assign({}, userObj4);
+
+console.log("userObj4", userObj4);
+console.log("userObj4Clone", userObj4Clone);
+
+userObj4Clone.myName = "Dog";
+userObj4Clone.activities.canMeow = false;
+userObj4Clone.activities.canBark = true;
+
+console.log("userObj4Clone", userObj4Clone);
+console.log("userObj4", userObj4);
+
+// causes nested loops sharing
+
+console.log(userObj4.activities === userObj4Clone.activities);
+
+// ! TO fix
+
+// * Structured clone
+
+let dog = {
+  name: "dog",
+  acts: {
+    canBark: true,
+    canMeow: false,
+  },
+};
+let cat = structuredClone(dog);
+cat.name = "cat";
+cat.acts.canBark = false;
+cat.acts.canMeow = true;
+console.log("dog", dog);
+console.log("cat", cat);
+  
