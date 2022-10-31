@@ -13,3 +13,7 @@ function hello(uName) {
 function desname(desname) {
   return `***${desname}***`;
 }
+
+// * Completed Code Quality
+// overview knowlege has beem gathered
+
