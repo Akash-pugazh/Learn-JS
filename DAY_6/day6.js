@@ -321,4 +321,3 @@ cat.acts.canBark = false;
 cat.acts.canMeow = true;
 console.log("dog", dog);
 console.log("cat", cat);
-  
